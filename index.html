@@ -313,7 +313,7 @@
 
 <section class="why-choose">
   
-    <div class="container">
+    <div class="containers">
 
         <h2>🌿 Why Choose Kalro Farm?</h2>
 
@@ -468,6 +468,41 @@
 
 </div>
     </div>
+            <div class="container">
+      <!-- Left Image -->
+      <div class="image-box">
+        <img src="https://www.delamarefarm.co.ke/assets/farm-supplies-ZJyENUks.jpg" alt="Farm Feeds">
+      </div>
+    
+      <!-- Right Content -->
+      <div class="content">
+        <h1 style="color: darkgreen;">Quality Feeds, Seeds & Fertilizer</h1>
+        <div class="subtitle">
+          Quality animal feeds and seeds delivered to your farm. Based on your
+          productivity needs.
+        </div>
+    
+        <div class="list">
+          <div class="item"><span>Dairy Meal 50kg</span><span class="price">KES 3,200</span></div>
+          <div class="item"><span>Dairy Meal 70kg</span><span class="price">KES 4,200</span></div>
+          <div class="item"><span>Layers Mash</span><span class="price">KES 3,600</span></div>
+          <div class="item"><span>Growers Mash</span><span class="price">KES 3,400</span></div>
+          <div class="item"><span>Chick Mash</span><span class="price">KES 3,800</span></div>
+          <div class="item"><span>Fish Feed 50kg</span><span class="price">KES 4,500</span></div>
+          <div class="item"><span>Dog Meal 20kg</span><span class="price">KES 2,500</span></div>
+          <div class="item"><span>Organic Fertilizer</span><span class="price">KES 2,000</span></div>
+          <div class="item"><span>Hybrid Maize Seeds</span><span class="price">KES 1,800</span></div>
+          <div class="item"><span>Napier Grass Seeds</span><span class="price">KES 1,200</span></div>
+        </div>
+    
+        <div class="button">
+        <a href="https://wa.me/254762457938?text=Hello%20I'm%20interested%20in%20this%20animal" target="_blank" class="whatsapp-btn">
+        💬 Inquire on WhatsApp
+    </a>
+    
+        </div>
+      </div>
+
 
   </section>
 
@@ -521,6 +556,7 @@
     </div>
 
   </section>
+  
 
   <!-- FOOTER -->
   <footer class="bg-green-950 text-white py-10">
@@ -704,6 +740,7 @@ const buttons = document.querySelectorAll(".filter-btn");
 
             </div>
 
+
             <!-- CONTENT -->
             <div class="p-6">
 
@@ -733,6 +770,8 @@ const buttons = document.querySelectorAll(".filter-btn");
                   ${animal.price}
                 </span>
 
+
+
                 <button>
                   
 <a
@@ -749,8 +788,64 @@ const buttons = document.querySelectorAll(".filter-btn");
               </div>
 
             </div>
+            <style>
 
+                      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+      }
+     .list {
+        background: #c9f8de;
+        padding: 10px;
+        border-radius: 6px;
+      }
+    
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+        color: black;
+        border-bottom: 1px solid #b5c4bd;
+        font-size: 14px;
+      }
+    
+      .item:last-child {
+        border-bottom: none;
+      }
+    
+      .price {
+        color: #2f5e3b;
+        font-weight: bold;
+      }
+    
+      .button {
+        margin-top: 15px;
+        text-align: center;
+      }
+    
+      .button a {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: #5bb4c4;
+        color: black;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+    
+      .button a:hover {
+        background-color: #5b8ec0;
+      }
+
+      
+                </style>
+     
           </div>
+          
 
         `;
       });
