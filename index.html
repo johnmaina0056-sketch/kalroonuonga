@@ -546,164 +546,130 @@
   <!-- JAVASCRIPT -->
   <script>
 
-    const animals = [
+   const animals = [
 
-      {
-        id: 1,
-        type: "cattle",
-        breed: "Lactating Cows",
-        age: "Upgrade your herd with high-quality, high-yield genetics<br>✅ Lactating Cows<br>• Producing 21–44 litres/day<br.• Prices: KSh 120,000 – 200,000<br>✅ In-calf Heifers<br>• Expected yield: 20–34 litres/day<br>• Prices: KSh 60,000 – 90,000<br>✅ Calves (3–15 months)<br>Quality guaranteed.",
-        price: " KSh 15,000 – 50,000",
-        images: [
-          "white1.jfif",
-          "white2.jfif",
-          "white3.jfif",
-          "white4.jfif"
-        ]
-      },
+  {
+    id: 1,
+    type: "cattle",
+    breed: "Lactating Cows",
+    age: "Upgrade your herd with high-quality genetics<br>✔ Producing 21–44L/day",
+    price: "KSh 120,000 – 200,000",
+    images: ["white1.jfif","white2.jfif","white3.jfif","white4.jfif"]
+  },
 
-      {
-        id: 2,
-        type: "sheep",
-        breed: "Pure South Africa black head dorpers",
-        age: "✓Lambs 5 month's 5500<br>✓Ready to serve rams @10k<br>✓Serving rams @11k -30k<br>✓Ewes @13k-20k.<br>✓Ewes and kids@ksh20k-40k<br>✓Twin families @10k-25k<br>We offer delivery country wide",
-        price: "5500-25,000ksh",
-        images: [
-          "blackheada.jfif",
-          "blackheadb.jfif",
-          "blackheadc.jfif"
-        ]
-      },
+  {
+    id: 2,
+    type: "sheep",
+    breed: "Dorper Sheep",
+    age: "Healthy breeding stock available",
+    price: "5,500 – 25,000",
+    images: ["blackheada.jfif","blackheadb.jfif","blackheadc.jfif","blackheadb.jfif"]
+  },
 
-      {
-        id: 3,
-        type: "hay",
-        breed: "HAY AND ANIMALS FEED ",
-        weight: "📌LUCERN<br>Lucerne @ ksh 400/- per bale.<br>(Each bale weight 18 kgs)<br>Lucerne seeds @ ksh 1250 per kg.<br>📌BOMA RHODES<br>Boma Rhodes @ ksh 200 per bale.<br>(Each bale weight 18kgs)<br>Boma rhodes seeds @ ksh 450 per kg.<br>📌BARLEY<br>Barley @ ksh 130 per piece.<br>(Each bale weight 15 kgs).<br>📌SILAGE(CHOPPED FODDER)<br>Full corn @ ksh 12 per kg.(Each bale weight 100kgs).<br>Non full-corn @ ksh 8 per kg.(Each bale weight 100 kgs).<br>Molasses @ ksh 900 per 20 litres bucket.",
-        images: [
-          "hay1.jfif",
-          "hay2.jfif",
-          "hay3.jfif",
-          "hay4.jfif"
-        ]
-      },
+  {
+    id: 3,
+    type: "hay",
+    breed: "Animal Feed & Hay",
+    weight: "Lucerne, Rhodes, Silage available",
+    price: "From KSh 8 – 400",
+    images: ["hay1.jfif","hay2.jfif","hay3.jfif","hay4.jfif"]
+  },
 
-      {
-        id: 4,
-        type: "cattle",
-        breed: "Jersey  cows",
-        age: "I prefer  Jersey  cows any day because  Dairy Cow's Kenya.<br>1) They eat less<br>2) They produce  high quality creamy milk with butter content of 5.2%<br>3)They are Hardy  and can survive  varied climatic  zones<br>4)They  produce  milk components at low cost compared  to other breeds<br>5)They look beautiful  and attractive <br> 6)They  are highly fertile,have a shorter Calving interval  and  they have earlier  maturity<br> 7)Their milk has high value used to make cheese and butter plus high nutrition value.",
-        price: "",
-        images: [
-          "jerseya.jfif"
-          
-        ]
-      },
+  {
+    id: 4,
+    type: "cattle",
+    breed: "Jersey Cows",
+    age: "High butter fat milk production breed",
+    images: ["jerseya.jfif","jerseya.jfif","jerseya.jfif","jerseya.jfif"]
+  },
 
-      {
-        id: 5,
-        type: "goat",
-        breed: "FULL BLOOD BOER GOAT",
-        age: "‼  **Kids (up to 3 months old):** KSh 7,000<br>**Young Goats (3-5 months old):** KSh 15,000<br>**Sub-adults (5-10 months old):** KSh 30,000<br>Our goats are well-cared-for and ready to enhance your farm's productivity. ",
-        price: "15,000-30,000 ksh",
-        images: [
-          "bore1.jfif",
-          "bore22.jfif",
-          "bore3.jfif",
-          "bore4.jfif"
-        ]
-      },
+  {
+    id: 5,
+    type: "goat",
+    breed: "Boer Goat",
+    age: "Kids to mature goats available",
+    price: "15,000 – 30,000",
+    images: ["bore1.jfif","bore22.jfif","bore3.jfif","bore4.jfif"]
+  },
 
-      {
-        id: 6,
-        type: "sheep",
-        breed: "Hampshire Sheep",
-        age: "4 months (lamb): KSh 26,000 – 27,000 �<br>Beyondforest +1<br>6 months: KSh 31,000 – 32,000 �<br>Beyondforest +1<br>8 months: KSh 38,000 – 39,000 �<br>Beyondforest +1<br>10 months: KSh 42,000+ �<br>Beyondforest +1<br>12 months (mature): KSh 45,000 – 48,000 Beyondforest +1",
-        price: "26,000-48,000ksh",
-        images: [
-          "hampa.jfif",
-          "hampb.jfif",
-          "hampc.jfif"
-          
-        ]
-      },
+  {
+    id: 6,
+    type: "sheep",
+    breed: "Hampshire Sheep",
+    age: "4–12 months available",
+    price: "26,000 – 48,000",
+    images: ["hampa.jfif","hampb.jfif","hampc.jfif","hampb.jfif"]
+  },
 
-      {
-        id: 7,
-        type: "cattle",
-        breed: "BORAN QUALITY , SAHIWAL QUALITY CALVES & HEIFERS FOR SALE",
-        age: " ◽Boran ◽Sahiwal◽ BrahmanLooking to start or expand your beef farming venture?We’ve got you covered with strong, healthy, and fast-growing breeds. 🚚 delivery available countrywide (upon agreement)📍",
-        weight: "790kg",
-        price: "Calves – From KSh 25,000<br>• Heifers – From KSh 60,000<br>• Matured - From Ksh 120,000",
-        images: [
-          "boran1.jfif",
-          "boran2.jfif",
-          "boran3.jfif",
-          "boran4.jfif"
-        ]
-      },
+  {
+    id: 7,
+    type: "cattle",
+    breed: "Boran & Sahiwal",
+    age: "Beef cattle breeds available",
+    price: "From 25,000",
+    images: ["boran3.jfif","boran2.jfif","boran1.jfif","boran4.jfif"]
+  },
 
-      {
-        id: 8,
-        type: "goat",
-        breed: "NUNUA LEO MBUZI WA MAZIWA KWA BEI NAFUU ✅",
-        age: "HERE ARE THE GOAT FOR MILK PRODUCTION,<br>Production of 3 - 4 litres per day.<br>3-6 litres per day✅OUR PRICES IS US FOLLOWS 👇<br>1️⃣. 3 MONTHS OLD @ 3,500 <br>2️⃣. 5 MONTHS OLD @ 5,500<br>3️⃣. 7  MONTHS OLD @ 7,500<br>4️⃣. 10 MONTHS OLD @ 10K<br>5️⃣. First timer mothers @ 14k<br>6️⃣. Second -timer mothers @ 12k<br>7️⃣. Ready to deliver in 2 weeks @ 18k<br>8️⃣.Ready to deliver in 1 month @ 16k <br>9️⃣.Male @10k.",
-       
-        images: [
-          "goat1.jfif",
-          "goat2.jfif",
-          "goat3.jfif",
-          "goat4.jfif"
-        ]
-      },
+  {
+    id: 8,
+    type: "goat",
+    breed: "Dairy Goats",
+    age: "Milk production goats available",
+    images: ["goat1.jfif","goat2.jfif","goat3.jfif","goat4.jfif"]
+  },
 
-      {
-        id: 9,
-        type: "cattle",
-        breed: "Girolando",
-        age: ",Calves (2–3 months) → KSh 20,000 – 30,000 �<br>Young (4–8 months) → KSh 30,000 – 40,000 �<br>Growing heifers (8–15 months) → KSh 60,000 – 130,000 (depends on quality) �<br>Beyondforest<br>Mature (not pregnant) → KSh 70,000 – 100,000 �<br>In-calf (pregnant) → KSh 140,000 – 180,000+ �<br>Lactating (milk producing) → KSh 180,000 – 250,000+ (high yield cows cost more) �",
-        price: "20,000-250,000 ksh",
-        images: [
-          "girolandoa.jfif"
-        ]
-      },
-{
+  {
     id: 9,
+    type: "cattle",
+    breed: "Girolando",
+    age: "High milk production cows",
+    price: "20,000 – 250,000",
+    images: ["girolandoa.jfif","girolandoa.jfif","girolandoa.jfif","girolandoa.jfif"]
+  },
+
+  /* =========================
+     POTATOES (FIXED)
+  ========================= */
+  {
+    id: 10,
     type: "potatoes",
-    name: "KALRO Certified Potato Seeds",
-    description: "High-quality certified potato seeds suitable for commercial and small-scale farming. These seeds are KEPHIS certified, ensuring high germination rates, strong disease resistance, vigorous growth, and excellent yields. They produce uniform tubers with high market value and are ideal for both fresh consumption and processing.",
-    
-    varieties: [
-        "Super Shangi",
-        "Dutch",
-        "Unica",
-        "Sheherekea",
-        "Stephens",
-        "Markies",
-        "Millioner"
-    ],
+    breed: "KALRO Certified Potato Seeds",
 
-    price: {
-        c1_90kg: "KSh 3,700",
-        c2_90kg: "KSh 3,000",
-        c1_50kg: "KSh 2,700",
-        c2_50kg: "KSh 2,150"
-    },
+    age: `
+High-quality certified potato seeds for commercial farming.<br>
+✔ KEPHIS certified<br>
+✔ High germination<br>
+✔ Disease resistant
+    `,
 
-    delivery: "We deliver anywhere in Kenya",
+    weight: `
+Varieties:<br>
+Super Shangi, Dutch, Unica, Sheherekea, Stephens, Markies, Millioner<br><br>
+Delivery available countrywide
+    `,
 
-    contact: "Call or WhatsApp to order",
+    price: `
+90kg C1 → KSh 3,700<br>
+90kg C2 → KSh 3,000<br>
+50kg C1 → KSh 2,700<br>
+50kg C2 → KSh 2,150
+    `,
 
     images: [
-        "potatoes1.jfif",
-        "potatoes2.jfif"
+      "potatoes1.jfif",
+      "potatoes2.jfif",
+      "potatoes1.jfif",
+      "potatoes2.jfif"
     ]
-}
-    ];
+  }
 
-    const grid = document.getElementById("livestockGrid");
-    const buttons = document.querySelectorAll(".filter-btn");
+]; // ✅ CLOSE ARRAY PROPERLY
 
+// =========================
+// DOM ELEMENTS (FIXED LOCATION)
+// =========================
+const grid = document.getElementById("livestockGrid");
+const buttons = document.querySelectorAll(".filter-btn");
     function renderAnimals(filter = "all") {
 
       grid.innerHTML = "";
