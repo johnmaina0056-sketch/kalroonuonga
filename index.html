@@ -116,6 +116,96 @@
       transform: scale(1.05);
     }
 
+ /* =========================
+   SECTION
+========================= */
+.why-choose {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-choose h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1b5e20;
+    margin-bottom: 50px;
+}
+
+/* =========================
+   GRID
+========================= */
+.choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* =========================
+   BLOCK
+========================= */
+.choose-block {
+    background: #ffffff;
+    padding: 40px 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.choose-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   ICON (GREEN THEME ONLY)
+========================= */
+.choose-icon {
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* If using Boxicons */
+.choose-icon i {
+    font-size: 50px;
+    color: #2e7d32; /* green icon color */
+}
+
+/* If using emojis */
+.choose-icon {
+    font-size: 40px;
+    line-height: 1;
+    color: #2e7d32;
+}
+/* =========================
+   TEXT
+========================= */
+.choose-block h3 {
+    font-size: 1.4rem;
+    color: #1b5e20;
+    margin-bottom: 12px;
+}
+
+.choose-block p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+    .why-choose h2 {
+        font-size: 2rem;
+    }
+}
   </style>
 </head>
   <!-- Google tag (gtag.js) -->
@@ -151,67 +241,109 @@
   </nav>
 
   <!-- HERO -->
-  <section id="home" class="hero-section text-white">
+<section id="home" class="hero-section text-white">
 
-    <div class="bg-black/60 min-h-[90vh] flex items-center">
+  <div class="bg-black/60 min-h-[90vh] flex items-center">
 
-      <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
 
-        <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Premium Livestock Marketplace
-        </h2>
+      <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        Quality You Can Trust
+      </h2>
 
-        <p class="text-xl md:text-2xl max-w-2xl mb-10">
-          Buy healthy cattle, goats, and sheep directly from trusted farms.
-        </p>
+      <p style="margin: 20px;">
+        Delamere Farm is your trusted source for premium dairy products, well-bred healthy livestock, and quality farm supplies in Naivasha, Kenya.
+      </p>
 
-        <a href="#livestock"
-          class="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-xl text-lg font-bold">
-          Browse Livestock
+      <!-- ACTION BUTTONS -->
+      <div style="display:flex; gap:15px; width: 100%; flex-wrap:wrap; margin-top:20px;">
+
+      <div style="display:flex; gap:15px; width:100%; flex-wrap:wrap; margin-top:20px;">
+
+    <div style="width:100%;">
+
+        <!-- CALL NOW -->
+        <a href="tel:+254762886726"
+           style="
+           background:#22c55e;
+           color:#fff;
+           padding:16px 20px;
+           border-radius:10px;
+           font-weight:bold;
+           text-decoration:none;
+           display:block;
+           width:100%;
+           box-sizing:border-box;
+           margin-bottom:15px;
+           text-align:center;">
+         Call Now: 0762886726
         </a>
 
-      </div>
+        <!-- WHATSAPP ORDER -->
+        <a href="https://wa.me/254762886726?text=Hello%20I%20want%20to%20make%20an%20order"
+           target="_blank"
+           style="
+           background:#f5b000;
+           color:#000;
+           padding:16px 20px;
+           border-radius:10px;
+           font-weight:bold;
+           text-decoration:none;
+           display:block;
+           width:100%;
+           box-sizing:border-box;
+           text-align:center;">
+         
+         WhatsApp Order
+        </a>
 
     </div>
 
-  </section>
+</div>
+      </div>
 
+
+
+    </div>
+
+  </div>
+
+</section>
   <!-- FEATURES -->
-  <section class="py-20">
 
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+<section class="why-choose">
+  
+    <div class="container">
 
-      <div class="bg-white p-8 rounded-2xl shadow-lg">
-        <h3 class="text-2xl font-bold mb-4 text-green-800">
-          Verified Health
-        </h3>
-        <p>
-          Every animal is checked and verified by professional veterinarians.
-        </p>
-      </div>
+        <h2>🌿 Why Choose Delamere Farm?</h2>
 
-      <div class="bg-white p-8 rounded-2xl shadow-lg">
-        <h3 class="text-2xl font-bold mb-4 text-green-800">
-          Trusted Farms
-        </h3>
-        <p>
-          We work with reliable and experienced livestock breeders.
-        </p>
-      </div>
+        <div class="choose-grid">
 
-      <div class="bg-white p-8 rounded-2xl shadow-lg">
-        <h3 class="text-2xl font-bold mb-4 text-green-800">
-          Fast Delivery
-        </h3>
-        <p>
-          Nationwide livestock transport and logistics available.
-        </p>
-      </div>
+            <!-- High Quality -->
+            <div class="choose-block">
+                <div class="choose-icon">🌱</div>
+                <h3>High Quality</h3>
+                <p>Premium genetics and health standards for all livestock.</p>
+            </div>
 
-    </div>
+            <!-- Free Delivery -->
+            <div class="choose-block">
+                <div class="choose-icon">🚚</div>
+                <h3>Free Delivery</h3>
+                <p>Countrywide delivery arranged upon agreement.</p>
+            </div>
 
-  </section>
+            <!-- Trusted Source -->
+            <div class="choose-block">
+                <div class="choose-icon">✔️</div>
+                <h3>Trusted Source</h3>
+                <p>Established name in Kenya farming with a proven track record.</p>
+            </div>
 
+        </div>
+
+</section>
+  
   <!-- LIVESTOCK -->
   <section id="livestock" class="py-20 bg-[#eeede7]">
 
@@ -437,10 +569,9 @@
         age: "✓Lambs 5 month's 5500<br>✓Ready to serve rams @10k<br>✓Serving rams @11k -30k<br>✓Ewes @13k-20k.<br>✓Ewes and kids@ksh20k-40k<br>✓Twin families @10k-25k<br>We offer delivery country wide",
         price: "5500-25,000ksh",
         images: [
-          "blackhead1.jfif",
-          "blackhead2.jfif",
-          "blackhead3.jfif",
-          "blackhead4.jfif"
+          "blackheada.jfif",
+          "blackheadb.jfif",
+          "blackheadc.jfif"
         ]
       },
 
@@ -464,10 +595,8 @@
         age: "I prefer  Jersey  cows any day because  Dairy Cow's Kenya.<br>1) They eat less<br>2) They produce  high quality creamy milk with butter content of 5.2%<br>3)They are Hardy  and can survive  varied climatic  zones<br>4)They  produce  milk components at low cost compared  to other breeds<br>5)They look beautiful  and attractive <br> 6)They  are highly fertile,have a shorter Calving interval  and  they have earlier  maturity<br> 7)Their milk has high value used to make cheese and butter plus high nutrition value.",
         price: "",
         images: [
-          "jersey1.jfif",
-          "jersey2.jfif",
-          "jersey3.jfif",
-          "jersey4.jfif"
+          "jerseya.jfif"
+          
         ]
       },
 
@@ -492,10 +621,10 @@
         age: "4 months (lamb): KSh 26,000 – 27,000 �<br>Beyondforest +1<br>6 months: KSh 31,000 – 32,000 �<br>Beyondforest +1<br>8 months: KSh 38,000 – 39,000 �<br>Beyondforest +1<br>10 months: KSh 42,000+ �<br>Beyondforest +1<br>12 months (mature): KSh 45,000 – 48,000 Beyondforest +1",
         price: "26,000-48,000ksh",
         images: [
-          "hamp1.jfif",
-          "hamp2.jfif",
-          "hamp3.jfif",
-          "hamp4.jfif"
+          "hampa.jfif",
+          "hampb.jfif",
+          "hampc.jfif"
+          
         ]
       },
 
@@ -535,13 +664,41 @@
         age: ",Calves (2–3 months) → KSh 20,000 – 30,000 �<br>Young (4–8 months) → KSh 30,000 – 40,000 �<br>Growing heifers (8–15 months) → KSh 60,000 – 130,000 (depends on quality) �<br>Beyondforest<br>Mature (not pregnant) → KSh 70,000 – 100,000 �<br>In-calf (pregnant) → KSh 140,000 – 180,000+ �<br>Lactating (milk producing) → KSh 180,000 – 250,000+ (high yield cows cost more) �",
         price: "20,000-250,000 ksh",
         images: [
-          "grilando1.jfif",
-          "grilando2.jfif",
-          "grilando3.jfif",
-          "grilando4.jfif"
+          "grilandoa.jfif"
         ]
-      }
+      },
+{
+    id: 9,
+    type: "potatoes",
+    name: "KALRO Certified Potato Seeds",
+    description: "High-quality certified potato seeds suitable for commercial and small-scale farming. These seeds are KEPHIS certified, ensuring high germination rates, strong disease resistance, vigorous growth, and excellent yields. They produce uniform tubers with high market value and are ideal for both fresh consumption and processing.",
+    
+    varieties: [
+        "Super Shangi",
+        "Dutch",
+        "Unica",
+        "Sheherekea",
+        "Stephens",
+        "Markies",
+        "Millioner"
+    ],
 
+    price: {
+        c1_90kg: "KSh 3,700",
+        c2_90kg: "KSh 3,000",
+        c1_50kg: "KSh 2,700",
+        c2_50kg: "KSh 2,150"
+    },
+
+    delivery: "We deliver anywhere in Kenya",
+
+    contact: "Call or WhatsApp to order",
+
+    images: [
+        "potatoes1.jfif",
+        "potatoes2.jfif"
+    ]
+}
     ];
 
     const grid = document.getElementById("livestockGrid");
