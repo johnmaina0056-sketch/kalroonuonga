@@ -208,6 +208,13 @@
         font-size: 2rem;
     }
 }
+
+    /* Match the existing livestock card styling */
+    #farm-products .animal-card { transition: 0.3s; }
+    #farm-products .animal-card:hover { transform: translateY(-5px); }
+    #farm-products .product-image-wrap { height: 18rem; min-height: 18rem; }
+    #farm-products .product-image { display: block; height: 18rem; object-fit: cover; }
+    #farm-products .product-image-fallback { height: 18rem; }
   </style>
 </head>
  <!-- Google tag (gtag.js) -->
@@ -236,6 +243,7 @@
       <div class="space-x-6 text-lg">
         <a href="#home" class="hover:text-yellow-300">Home</a>
         <a href="#livestock" class="hover:text-yellow-300">Livestock</a>
+        <a href="#farm-products" class="hover:text-yellow-300">Farm Products</a>
         <a href="#about" class="hover:text-yellow-300">About</a>
         <a href="#contact" class="hover:text-yellow-300">Contact</a>
       </div>
@@ -393,6 +401,18 @@
 
     </div>
 
+  </section>
+
+  <!-- NEW FARM PRODUCTS -->
+  <section id="farm-products" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-green-900 mb-4">Poultry, Fish & Farm Products</h2>
+        <p class="text-lg text-gray-600">Browse our available birds, livestock, seedlings and farm supplies. Prices are in Kenyan shillings (KSh).</p>
+      </div>
+      <div id="farmProductsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7"></div>
+      <p class="text-center text-gray-500 mt-8">Prices may vary by age, size, breed and quantity. Contact us on WhatsApp to confirm availability.</p>
+    </div>
   </section>
 
   <!-- ABOUT -->
@@ -705,6 +725,75 @@ Delivery available countrywide
 
 ]; // ✅ CLOSE ARRAY PROPERLY
 
+// Additional farm products. Add four photos per product in product-images/.
+// Name them product-name-1.jpg through product-name-4.jpg.
+const farmProducts = [
+  { name: "Turkey", slug: "turkey", price: "KSh 3,000", description: "A great choice for poultry keepers and farmers looking to raise turkeys." },
+  { name: "Goose", slug: "goose", price: "KSh 2,350", description: "Healthy geese for your farm or poultry project. Contact us for availability." },
+  { name: "Pigs", slug: "pigs", price: "KSh 30,000", description: "Pigs for farmers planning to start or grow a livestock project." },
+  { name: "Day-old Chicks", slug: "day-old-chicks", price: "KSh 70", description: "Start your poultry flock with day-old chicks. Ask us about availability." },
+  { name: "Seedlings", slug: "seedlings", price: "KSh 1,500", description: "Seedlings to help you get your planting season underway. Ask about available varieties." },
+  { name: "Duck", slug: "duck", price: "KSh 380", description: "Ducks for small-scale or commercial poultry keeping." },
+  { name: "Fish Fingerlings (Samaki)", slug: "fish-fingerlings", price: "KSh 350 – 4,000", description: "Fish fingerlings for stocking your fish pond. Price depends on your requirements." },
+  { name: "Eggs (Mayai)", slug: "eggs", price: "KSh 1,500 – 20,000", description: "Eggs available in different quantities. Contact us to confirm your order." },
+  { name: "Rabbit", slug: "rabbit", price: "KSh 140 – 3,800", description: "Rabbits for farmers and anyone interested in rabbit keeping." },
+  { name: "Peacock", slug: "peacock", price: "Inquire on WhatsApp", variable: true, description: "Ornamental peafowl available on request. Message us for current pricing and availability." },
+  { name: "Guinea Fowl", slug: "guinea-fowl", price: "Inquire on WhatsApp", variable: true, description: "Guinea fowl for your poultry farm. Contact us for current prices and availability." }
+];
+
+function selectFarmProductImage(button, imageSrc) {
+  const card = button.closest('.farm-product-card');
+  const mainImage = card.querySelector('.farm-product-main-image');
+  mainImage.src = imageSrc;
+  mainImage.style.display = 'block';
+  const fallback = card.querySelector('.farm-product-fallback');
+  if (fallback) fallback.style.display = 'none';
+  card.querySelectorAll('.farm-product-thumb').forEach(thumb => {
+    thumb.classList.remove('ring-2', 'ring-green-700');
+    thumb.setAttribute('aria-pressed', 'false');
+  });
+  button.classList.add('ring-2', 'ring-green-700');
+  button.setAttribute('aria-pressed', 'true');
+}
+
+function renderFarmProducts() {
+  const productGrid = document.getElementById("farmProductsGrid");
+  if (!productGrid) return;
+  productGrid.innerHTML = farmProducts.map(product => {
+    const message = encodeURIComponent(`Hello Kalro Farm, I would like to inquire about ${product.name}${product.variable ? ' and its current price' : ''}.`);
+    const images = [1, 2, 3, 4].map(number => `product-images/${product.slug}-${number}.jpg`);
+    return `
+      <article class="animal-card farm-product-card bg-white rounded-2xl overflow-hidden shadow-xl flex flex-col">
+        <div class="product-image-wrap bg-green-50 flex items-center justify-center overflow-hidden relative">
+          <img src="${images[0]}" alt="${product.name}" loading="lazy" class="farm-product-main-image h-72 w-full object-cover cursor-pointer"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="farm-product-fallback h-72 w-full items-center justify-center flex-col text-green-900" style="display:none" aria-label="Add ${product.slug}-1.jpg here">
+            <span class="text-5xl mb-2">🌿</span><span class="font-semibold">${product.name}</span>
+            <span class="text-xs text-gray-500 mt-1">Add: ${product.slug}-1.jpg</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-4 gap-2 p-3 bg-gray-100" aria-label="${product.name} image gallery">
+          ${images.map((image, index) => `
+            <button type="button" class="farm-product-thumb gallery-image h-20 rounded-lg overflow-hidden cursor-pointer focus:outline-none ${index === 0 ? 'ring-2 ring-green-700' : ''}"
+              aria-label="Show ${product.name} image ${index + 1}" aria-pressed="${index === 0 ? 'true' : 'false'}"
+              onclick="selectFarmProductImage(this, '${image}')">
+              <img src="${image}" alt="${product.name} image ${index + 1}" loading="lazy" class="h-full w-full object-cover"
+                onerror="this.style.visibility='hidden'; this.parentElement.style.background='#e5e7eb';">
+            </button>`).join("")}
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl font-bold text-gray-900">${product.name}</h3>
+          <p class="text-sm leading-relaxed text-gray-600 mt-2">${product.description}</p>
+          <p class="text-green-800 font-bold text-lg mt-3 mb-5">${product.price}</p>
+          <a href="https://wa.me/254762886726?text=${message}" target="_blank" rel="noopener noreferrer"
+             class="mt-auto text-center bg-green-700 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-semibold transition">
+            💬 ${product.variable ? 'Inquire on WhatsApp' : 'Order on WhatsApp'}
+          </a>
+        </div>
+      </article>`;
+  }).join("");
+}
+
 // =========================
 // DOM ELEMENTS (FIXED LOCATION)
 // =========================
@@ -900,6 +989,7 @@ const buttons = document.querySelectorAll(".filter-btn");
     }
 
     renderAnimals();
+    renderFarmProducts();
 
   </script>
 
