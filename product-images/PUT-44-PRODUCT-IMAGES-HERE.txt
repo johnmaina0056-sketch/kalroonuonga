@@ -1,0 +1,1 @@
+Place the 4 JPG images for each product in this folder. See ../README.md for exact filenames.
